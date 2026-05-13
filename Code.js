@@ -52,17 +52,6 @@ function setup() {
   console.log('=== 세팅 완료! ===');
   console.log('마스터 DB ID: ' + masterSSId);
   console.log('운영 파일 ID: ' + opsSSId);
-
-  SpreadsheetApp.getUi().alert(
-    '세팅 완료!\n\n' +
-    '공유 드라이브에 다음 파일이 생성되었습니다:\n' +
-    '- 01_마스터DB / 마스터DB.xlsx\n' +
-    '- 02_운영파일 / 운영파일.xlsx\n' +
-    '- 03_작업지시서템플릿 / WO_템플릿_* (5개)\n' +
-    '- 04_작업지시서출력 (빈 폴더)\n' +
-    '- 05_스와치이미지 (빈 폴더)\n\n' +
-    '마스터DB > 시스템설정 탭에서 모든 파일 ID를 확인할 수 있습니다.'
-  );
 }
 
 
