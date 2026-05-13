@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Google Apps Script project for MUMUZ ESSENTIAL (무무즈에센셜) — a children's clothing brand. It's a one-time setup script that creates a production management system in Google Drive/Sheets/Docs.
+Google Apps Script project for MOOMOOZ ESSENTIAL (무무즈에센셜) — a children's clothing brand. It's a one-time setup script that creates a production management system in Google Drive/Sheets/Docs.
 
 ## Development Workflow (CLASP)
 
@@ -59,10 +59,19 @@ All logic lives in a single file: `Code.js` (~518 lines).
 - **사이즈스펙** (Size Specs): size grading per item type
 - **작업지시서목록** (Work Order List): tracks all issued work orders
 
-### Important Constants
+### Configuration / Secrets
 
-- Shared Drive ID: `1F7mqqY4jhcMDdtPeofVA22aVurtdZNJV` (hardcoded in `createFolderStructure`)
-- System Config is stored in a sheet and read back via `getConfig()` — this is how the script IDs of created files are passed between functions
+Sensitive values (Drive IDs, etc.) are stored as **Script Properties**, not in source code.
+
+- Runtime: `PropertiesService.getScriptProperties().getProperty('KEY')`
+- Set values in: Apps Script 에디터 > 프로젝트 설정 > 스크립트 속성
+- Local reference: `.env` (gitignored) — copy from `.env.example`
+
+| Property key | Description |
+|---|---|
+| `SHARED_DRIVE_ID` | Google Shared Drive root folder ID |
+
+After `setup()` runs, all generated file/folder IDs are also written to the 시스템설정 sheet and readable via `getConfig('KEY')`.
 
 ## No Test Infrastructure
 

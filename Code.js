@@ -3,7 +3,7 @@
 // 실행 방법: setup() 함수 선택 후 실행 버튼 클릭 (1회만)
 // ============================================================
 
-var SHARED_DRIVE_ID = '1F7mqqY4jhcMDdtPeofVA22aVurtdZNJV';
+var SHARED_DRIVE_ID = PropertiesService.getScriptProperties().getProperty('SHARED_DRIVE_ID');
 
 // ── 아이템 유형 정의 ──────────────────────────────────────
 var ITEM_TYPES = {
