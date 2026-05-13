@@ -73,6 +73,11 @@ Sensitive values (Drive IDs, etc.) are stored as **Script Properties**, not in s
 
 After `setup()` runs, all generated file/folder IDs are also written to the 시스템설정 sheet and readable via `getConfig('KEY')`.
 
+## Coding Conventions
+
+- Use `const` / `let` — never `var`
+- Use `console.log` — never `Logger.log`
+
 ## No Test Infrastructure
 
 There are no automated tests. Manual testing is done by running `setup()` in the Apps Script editor and verifying the generated Drive/Sheets/Docs output.
