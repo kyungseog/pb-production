@@ -383,7 +383,7 @@ function buildWorkOrderTemplate(doc, typeKey, typeName) {
   const noteTable = body.appendTable([
     ['{{DESIGN_NOTE}}']
   ]);
-  noteTable.getRow(0).getCell(0).setMinimumHeight(80);
+  noteTable.getRow(0).setMinimumRowHeight(80);
   styleTable(noteTable, '#FFFFFF');
 
   // ── 결재란 ───────────────────────────────────────────────
@@ -400,7 +400,7 @@ function buildWorkOrderTemplate(doc, typeKey, typeName) {
   for (let ci = 0; ci < approvalHeaderRow.getNumCells(); ci++) {
     approvalHeaderRow.getCell(ci).setBackgroundColor('#ECEFF1');
   }
-  approvalTable.getRow(1).getCell(0).setMinimumHeight(50);
+  approvalTable.getRow(1).setMinimumRowHeight(50);
 
   doc.saveAndClose();
 }
